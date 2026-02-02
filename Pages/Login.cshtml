@@ -1,0 +1,52 @@
+﻿@page "/"
+@model NAVASCA_PROEL4WProject.Pages.LoginModel
+@{
+    Layout = "~/Pages/Shared/Login_Layout.cshtml";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h4 class="mb-0">Log In</h4>
+    <div class="text-orange" style="color: #ee4d2d; cursor: pointer;">
+        <small>Log in with QR</small>
+    </div>
+</div>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger small mb-2"></div>
+
+    <div class="mb-3">
+        <input type="text" asp-for="users.Username" class="form-control" placeholder="Enter your Username" />
+        <span class="text-danger" asp-validation-for="users.Username"></span>
+    </div>
+
+
+    <div class="mb-3">
+        <input type="password" asp-for="users.Password" class="form-control" placeholder="Enter your Password" />
+        <span class="text-danger" asp-validation-for="users.Password"></span>
+    </div>
+
+    <button type="submit" class="btn btn-shopee mb-3">Login</button>
+
+    <div class="d-flex justify-content-between small mb-3">
+        <a href="#" class="text-decoration-none" style="color: #0055aa;">Forgot Password</a>
+        <a href="#" class="text-decoration-none" style="color: #0055aa;">Log In with Phone Number</a>
+    </div>
+
+    <div class="divider">
+        <span>OR</span>
+    </div>
+
+    <div class="row g-2">
+        <div class="col-6">
+            <button type="button" class="btn btn-outline-secondary w-100 btn-sm">Facebook</button>
+        </div>
+        <div class="col-6">
+            <button type="button" class="btn btn-outline-secondary w-100 btn-sm">Google</button>
+        </div>
+    </div>
+
+    <div class="text-center mt-4 small text-muted">
+        New to Shopee?
+        <a asp-page="/Registers/Index" style="color: #ee4d2d; font-weight: bold;" class="text-decoration-none">Sign Up</a>
+    </div>
+</form>
