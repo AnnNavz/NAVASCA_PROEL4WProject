@@ -1,12 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using NAVASCA_PROEL4WProject.Data;
+using NAVASCA_PROEL4WProject.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<NAVASCA_PROEL4WProjectContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("NAVASCA_PROEL4WProjectContext") ?? throw new InvalidOperationException("Connection string 'NAVASCA_PROEL4WProjectContext' not found.")));
+
+var connectionString = builder.Configuration.GetConnectionString("NAVASCA_PROEL4WProjectContext");
+
+// Register the DbContext to use SQL Server
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));
 
 var app = builder.Build();
 
