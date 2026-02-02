@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NAVASCA_PROEL4WProject.Data;
 
@@ -10,9 +11,11 @@ using NAVASCA_PROEL4WProject.Data;
 namespace NAVASCA_PROEL4WProject.Migrations
 {
     [DbContext(typeof(NAVASCA_PROEL4WProjectContext))]
-    partial class NAVASCA_PROEL4WProjectContextModelSnapshot : ModelSnapshot
+    [Migration("20260202100326_Registers")]
+    partial class Registers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

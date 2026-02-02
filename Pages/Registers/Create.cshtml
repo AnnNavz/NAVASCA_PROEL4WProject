@@ -1,0 +1,70 @@
+﻿@page
+@model NAVASCA_PROEL4WProject.Pages.Registers.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Register</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Register.FirstName" class="control-label"></label>
+                <input asp-for="Register.FirstName" class="form-control" aria-required="true"/>
+                <span asp-validation-for="Register.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Register.LastName" class="control-label"></label>
+                <input asp-for="Register.LastName" class="form-control" aria-required="true"/>
+                <span asp-validation-for="Register.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Register.Age" class="control-label"></label>
+                <input asp-for="Register.Age" class="form-control" />
+                <span asp-validation-for="Register.Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Register.Email" class="control-label"></label>
+                <input asp-for="Register.Email" class="form-control" aria-required="true"/>
+                <span asp-validation-for="Register.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Register.Username" class="control-label"></label>
+                <input asp-for="Register.Username" class="form-control" aria-required="true"/>
+                <span asp-validation-for="Register.Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Register.Password" class="control-label"></label>
+                <input asp-for="Register.Password" class="form-control" aria-required="true"/>
+                <span asp-validation-for="Register.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <span class="text-danger">*</span>
+                <label asp-for="Register.ConfirmPassword" class="control-label"></label>
+                <input asp-for="Register.ConfirmPassword" class="form-control" aria-required="true"/>
+                <span asp-validation-for="Register.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

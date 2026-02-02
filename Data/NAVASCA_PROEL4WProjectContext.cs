@@ -15,5 +15,6 @@ namespace NAVASCA_PROEL4WProject.Data
         }
 
         public DbSet<NAVASCA_PROEL4WProject.Models.Product> Product { get; set; } = default!;
+        public DbSet<NAVASCA_PROEL4WProject.Models.Register> Register { get; set; } = default!;
     }
 }
