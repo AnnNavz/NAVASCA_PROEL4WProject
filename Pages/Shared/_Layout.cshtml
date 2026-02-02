@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NAVASCA_PROEL4WProject</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Homepage_NAVASCA.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+
+        <div class="text-white py-1 small d-none d-lg-block" style="background-color: #f75525;">
+            <div class="container d-flex justify-content-end">
+                <a href="#" class="text-white me-3 text-decoration-none">Seller Centre</a>
+                <a href="#" class="text-white me-3 text-decoration-none">Download</a>
+                <a href="#" class="text-white me-3 text-decoration-none"><i class="bi bi-bell me-1"></i>Notifications</a>
+                <a href="#" class="text-white me-3 text-decoration-none"><i class="bi bi-question-circle me-1"></i>Help</a>
+                <a href="#" class="text-white text-decoration-none">Sign Up</a>
+                <span class="mx-1">|</span>
+                <a class="text-white text-decoration-none" asp-area="" asp-page="/Login">Logout</a>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-sm py-2" style="background-color: #f75525;">
+            <div class="container">
+                <a class="navbar-brand">
+                    <img src="~/images/logo.png" alt="NAVASCA Logo" width="180" class="d-inline-block align-text-top me-2" />
+                </a>
+
+                <div class="d-flex flex-grow-1 justify-content-center">
+                    <form class="d-flex w-75 bg-white shadow-sm" role="search">
+                        <input class="form-control border-0 py-2" type="search" placeholder="Sign up and get 100% off on your first order" aria-label="Search">
+                        <button class="btn" type="submit" style="background-color: #f75525; color: white; width: 80px; height: 40px; margin: 3px">
+                            <i class="bi bi-search">Search</i>
+                        </button>
+                    </form>
+                </div>
+
+                <a class="navbar-brand ms-5" href="#">
+                    <img src="./images/cart.png" alt="NAVASCA Cart" width="30" class="d-inline-block align-text-top" />
+                </a>
+            </div>
+        </nav>
+
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - Shopee.All Rights Reserved. - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
