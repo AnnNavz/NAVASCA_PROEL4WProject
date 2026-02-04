@@ -1,0 +1,60 @@
+﻿@page
+@model NAVASCA_PROEL4WProject.Pages.RegisterShops.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>RegisterShop</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RegisterShop.ShopID" />
+            <div class="form-group">
+<span class="text-danger">*</span>
+                <label asp-for="RegisterShop.ShopName" class="control-label"></label>
+                <input asp-for="RegisterShop.ShopName" class="form-control" aria-required="true"/>
+                <span asp-validation-for="RegisterShop.ShopName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+<span class="text-danger">*</span>
+                <label asp-for="RegisterShop.Description" class="control-label"></label>
+                <input asp-for="RegisterShop.Description" class="form-control" aria-required="true"/>
+                <span asp-validation-for="RegisterShop.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+<span class="text-danger">*</span>
+                <label asp-for="RegisterShop.PickupAddress" class="control-label"></label>
+                <input asp-for="RegisterShop.PickupAddress" class="form-control" aria-required="true"/>
+                <span asp-validation-for="RegisterShop.PickupAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+<span class="text-danger">*</span>
+                <label asp-for="RegisterShop.ContactNumber" class="control-label"></label>
+                <input asp-for="RegisterShop.ContactNumber" class="form-control" aria-required="true"/>
+                <span asp-validation-for="RegisterShop.ContactNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+<span class="text-danger">*</span>
+                <label asp-for="RegisterShop.Email" class="control-label"></label>
+                <input asp-for="RegisterShop.Email" class="form-control" aria-required="true"/>
+                <span asp-validation-for="RegisterShop.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
