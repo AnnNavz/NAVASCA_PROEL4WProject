@@ -7,109 +7,53 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Homepage_NAVASCA.styles.css" asp-append-version="true" />
-    <style>
-        .footer-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-            .footer-list li a {
-                text-decoration: none;
-                color: inherit;
-                font-size: 0.8rem;
-            }
-
-        .footer-heading {
-            font-size: 0.85rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-    </style>
 </head>
 <body>
     <header>
+
         <div class="text-white py-1 small d-none d-lg-block" style="background-color: #f75525;">
-            <div class="container d-flex justify-content-end align-items-center">
-                <div class="d-flex align-items-center gap-3">
-                    <a class="text-white text-decoration-none" asp-area="" asp-page="/RegisterShops/Index">SellerCenter</a>
-                    <a href="#" class="text-white text-decoration-none">Download</a>
-                    <a href="#" class="text-white text-decoration-none"><i class="bi bi-bell me-1"></i>Notifications</a>
-                    <a href="#" class="text-white text-decoration-none"><i class="bi bi-question-circle me-1"></i>Help</a>
-                    <a href="#" class="text-white text-decoration-none fw-bold">Sign Up</a>
-                    <span class="opacity-50">|</span>
-                    <a class="text-white text-decoration-none" asp-area="" asp-page="/Login">Logout</a>
-                </div>
+            <div class="container d-flex justify-content-end">
+                <a class="text-white me-3 text-decoration-none" asp-area="" asp-page="/RegisterShops/Index">SellerCenter</a>
+                <a href="#" class="text-white me-3 text-decoration-none">Download</a>
+                <a href="#" class="text-white me-3 text-decoration-none"><i class="bi bi-bell me-1"></i>Notifications</a>
+                <a href="#" class="text-white me-3 text-decoration-none"><i class="bi bi-question-circle me-1"></i>Help</a>
+                <a href="#" class="text-white text-decoration-none">Sign Up</a>
+                <span class="mx-1">|</span>
+                <a class="text-white text-decoration-none" asp-area="" asp-page="/Login">Logout</a>
             </div>
         </div>
 
-        <nav class="navbar navbar-expand-sm py-3" style="background-color: #f75525;">
-            <div class="container d-flex align-items-center justify-content-between">
-                <a class="navbar-brand m-0 p-0" href="#">
-                    <img src="~/images/logo.png" alt="NAVASCA Logo" width="180" class="d-block" />
+        <nav class="navbar navbar-expand-sm py-2" style="background-color: #f75525;">
+            <div class="container">
+                <a class="navbar-brand">
+                    <img src="~/images/logo.png" alt="NAVASCA Logo" width="180" class="d-inline-block align-text-top me-2" />
                 </a>
 
-                <div class="flex-grow-1 px-4">
-                    <form class="d-flex" role="search">
-                        <div class="input-group bg-white p-1 rounded-sm shadow-sm">
-                            <input class="form-control border-0 shadow-none" type="search" placeholder="Sign up and get 100% off on your first order" aria-label="Search">
-                            <button class="btn border-0 text-white d-flex align-items-center justify-content-center" type="submit" style="background-color: #f75525; min-width: 60px;">
-                                <i class="bi bi-search">Search</i>
-                            </button>
-                        </div>
+                <div class="d-flex flex-grow-1 justify-content-center">
+                    <form class="d-flex w-75 bg-white shadow-sm" role="search">
+                        <input class="form-control border-0 py-2" type="search" placeholder="Sign up and get 100% off on your first order" aria-label="Search">
+                        <button class="btn" type="submit" style="background-color: #f75525; color: white; width: 80px; height: 40px; margin: 3px">
+                            <i class="bi bi-search">Search</i>
+                        </button>
                     </form>
                 </div>
 
-                <div class="ms-2">
-                    <a class="navbar-brand m-0" href="#">
-                        <img src="~/images/cart.png" alt="NAVASCA Cart" width="35" />
-                    </a>
-                </div>
+                <a class="navbar-brand ms-5" href="#">
+                    <img src="~/images/cart.png" alt="NAVASCA Cart" width="30" class="d-inline-block align-text-top" />
+                </a>
             </div>
         </nav>
-    </header>
 
+    </header>
     <div class="container">
-        <main role="main" class="py-4">
+        <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="bg-light border-top mt-5">
-        <div class="container py-5">
-            <div class="row g-4">
-                <div class="col-6 col-md-3">
-                    <h3 class="footer-heading">CUSTOMER SERVICE</h3>
-                    <ul class="footer-list">
-                        <li><a href="#help">Help Centre</a></li>
-                        <li><a href="#cares">Shopee Cares PH</a></li>
-                        <li><a href="#payments">Payment Methods</a></li>
-                        <li><a href="#shopeepay">ShopeePay</a></li>
-                        <li><a href="#coins">Shopee Coins</a></li>
-                        <li><a href="#tracking">Order Tracking</a></li>
-                        <li><a href="#freeship">Free Shipping</a></li>
-                        <li><a href="#return">Return & Refund</a></li>
-                        <li><a href="#guarantee">Shopee Guarantee</a></li>
-                        <li><a href="#overseas">Overseas Product</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-6 col-md-3">
-                    <h3 class="footer-heading">ABOUT SHOPEE</h3>
-                    <ul class="footer-list">
-                        <li><a href="#aboutus">About Us</a></li>
-                        <li><a href="#blog">Shopee Blog</a></li>
-                        <li><a href="#careers">Shopee Careers</a></li>
-                        <li><a href="#policies">Policies</a></li>
-                        <li><a href="#privacy">Shopee Privacy Policy</a></li>
-                        <li><a href="#mall">Shopee Mall</a></li>
-                        <li><a href="#seller">Seller Centre</a></li>
-                        <li><a href="#flashdeals">Flash Deals</a></li>
-                        <li><a href="#media">Media Contact</a></li>
-                    </ul>
-                </div>
-            </div>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - Shopee.All Rights Reserved. - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 
