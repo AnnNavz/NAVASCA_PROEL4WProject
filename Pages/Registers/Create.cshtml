@@ -5,66 +5,83 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
 
-<h4>Register</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <span class="text-danger">*</span>
-                <label asp-for="Register.FirstName" class="control-label"></label>
-                <input asp-for="Register.FirstName" class="form-control" aria-required="true"/>
-                <span asp-validation-for="Register.FirstName" class="text-danger"></span>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h2 class="mb-1">Create</h2>
+                    <h4 class="text-muted mb-3">Register</h4>
+                    <hr class="mb-4" />
+
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="row mb-3">
+                            <div class="form-group col-md-6">
+                                <span class="text-danger">*</span>
+                                <label asp-for="Register.FirstName" class="control-label"></label>
+                                <input asp-for="Register.FirstName" class="form-control" />
+                                <span asp-validation-for="Register.FirstName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <span class="text-danger">*</span>
+                                <label asp-for="Register.LastName" class="control-label"></label>
+                                <input asp-for="Register.LastName" class="form-control" />
+                                <span asp-validation-for="Register.LastName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="form-group col-md-3">
+                                <label asp-for="Register.Age" class="control-label"></label>
+                                <input asp-for="Register.Age" type="number" min="0" max="120" class="form-control" />
+                                <span asp-validation-for="Register.Age" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-9">
+                                <span class="text-danger">*</span>
+                                <label asp-for="Register.Email" class="control-label"></label>
+                                <input asp-for="Register.Email" class="form-control" />
+                                <span asp-validation-for="Register.Email" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <span class="text-danger">*</span>
+                            <label asp-for="Register.Username" class="control-label"></label>
+                            <input asp-for="Register.Username" class="form-control" />
+                            <span asp-validation-for="Register.Username" class="text-danger"></span>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="form-group col-md-6">
+                                <span class="text-danger">*</span>
+                                <label asp-for="Register.Password" class="control-label"></label>
+                                <input asp-for="Register.Password" type="password" class="form-control" />
+                                <span asp-validation-for="Register.Password" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <span class="text-danger">*</span>
+                                <label asp-for="Register.ConfirmPassword" class="control-label"></label>
+                                <input asp-for="Register.ConfirmPassword" type="password" class="form-control" />
+                                <span asp-validation-for="Register.ConfirmPassword" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <input type="submit" value="Create Account" class="btn btn-primary btn-lg" />
+                            <a asp-page="Index" class="btn btn-link text-center">Back to List</a>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <span class="text-danger">*</span>
-                <label asp-for="Register.LastName" class="control-label"></label>
-                <input asp-for="Register.LastName" class="form-control" aria-required="true"/>
-                <span asp-validation-for="Register.LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Register.Age" class="control-label"></label>
-                <input asp-for="Register.Age" class="form-control" />
-                <span asp-validation-for="Register.Age" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <span class="text-danger">*</span>
-                <label asp-for="Register.Email" class="control-label"></label>
-                <input asp-for="Register.Email" class="form-control" aria-required="true"/>
-                <span asp-validation-for="Register.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <span class="text-danger">*</span>
-                <label asp-for="Register.Username" class="control-label"></label>
-                <input asp-for="Register.Username" class="form-control" aria-required="true"/>
-                <span asp-validation-for="Register.Username" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <span class="text-danger">*</span>
-                <label asp-for="Register.Password" class="control-label"></label>
-                <input asp-for="Register.Password" class="form-control" aria-required="true"/>
-                <span asp-validation-for="Register.Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <span class="text-danger">*</span>
-                <label asp-for="Register.ConfirmPassword" class="control-label"></label>
-                <input asp-for="Register.ConfirmPassword" class="form-control" aria-required="true"/>
-                <span asp-validation-for="Register.ConfirmPassword" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

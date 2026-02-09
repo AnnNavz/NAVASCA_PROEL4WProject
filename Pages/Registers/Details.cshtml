@@ -5,57 +5,69 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h2 class="mb-1">Details</h2>
+                    <h4 class="text-muted mb-3">Register Information</h4>
+                    <hr class="mb-4" />
 
-<div>
-    <h4>Register</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Register.FirstName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Register.FirstName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Register.LastName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Register.LastName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Register.Age)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Register.Age)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Register.Email)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Register.Email)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Register.Username)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Register.Username)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Register.Password)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Register.Password)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Register.ConfirmPassword)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Register.ConfirmPassword)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Register.ProfileId">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+                    <dl class="row">
+                        <dt class="col-sm-4 text-muted">
+                            @Html.DisplayNameFor(model => model.Register.FirstName)
+                        </dt>
+                        <dd class="col-sm-8 fw-bold">
+                            @Html.DisplayFor(model => model.Register.FirstName)
+                        </dd>
+
+                        <dt class="col-sm-4 text-muted">
+                            @Html.DisplayNameFor(model => model.Register.LastName)
+                        </dt>
+                        <dd class="col-sm-8 fw-bold">
+                            @Html.DisplayFor(model => model.Register.LastName)
+                        </dd>
+
+                        <dt class="col-sm-4 text-muted">
+                            @Html.DisplayNameFor(model => model.Register.Age)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Register.Age)
+                        </dd>
+
+                        <dt class="col-sm-4 text-muted">
+                            @Html.DisplayNameFor(model => model.Register.Email)
+                        </dt>
+                        <dd class="col-sm-8 text-primary">
+                            @Html.DisplayFor(model => model.Register.Email)
+                        </dd>
+
+                        <dt class="col-sm-4 text-muted">
+                            @Html.DisplayNameFor(model => model.Register.Username)
+                        </dt>
+                        <dd class="col-sm-8">
+                            <span class="badge bg-light text-dark border">@Html.DisplayFor(model => model.Register.Username)</span>
+                        </dd>
+
+                        <dt class="col-sm-4 text-muted">
+                            @Html.DisplayNameFor(model => model.Register.Password)
+                        </dt>
+                        <dd class="col-sm-8 text-muted italic">
+                            ********
+                        </dd>
+                    </dl>
+
+                    <div class="mt-4 pt-3 border-top d-flex gap-2">
+                        <a asp-page="./Edit" asp-route-id="@Model.Register.ProfileId" class="btn btn-primary px-4">
+                            Edit Profile
+                        </a>
+                        <a asp-page="./Index" class="btn btn-outline-secondary">
+                            Back to List
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
