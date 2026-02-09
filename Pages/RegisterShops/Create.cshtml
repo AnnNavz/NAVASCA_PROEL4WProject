@@ -5,56 +5,67 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h2 class="mb-1">Create</h2>
+                    <h4 class="text-muted mb-3">Register Shop</h4>
+                    <hr class="mb-4" />
 
-<h4>RegisterShop</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <span class="text-danger">*</span>
-                <label asp-for="RegisterShop.ShopName" class="control-label"></label>
-                <input asp-for="RegisterShop.ShopName" class="form-control" aria-required="true"/>
-                <span asp-validation-for="RegisterShop.ShopName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <span class="text-danger">*</span>
-                <label asp-for="RegisterShop.Description" class="control-label"></label>
-                <input asp-for="RegisterShop.Description" class="form-control" aria-required="true"/>
-                <span asp-validation-for="RegisterShop.Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <span class="text-danger">*</span>
-                <label asp-for="RegisterShop.PickupAddress" class="control-label"></label>
-                <input asp-for="RegisterShop.PickupAddress" class="form-control" aria-required="true"/>
-                <span asp-validation-for="RegisterShop.PickupAddress" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <span class="text-danger">*</span>
-                <label asp-for="RegisterShop.ContactNumber" class="control-label"></label>
-                <input asp-for="RegisterShop.ContactNumber" class="form-control" aria-required="true"/>
-                <span asp-validation-for="RegisterShop.ContactNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <span class="text-danger">*</span>
-                <label asp-for="RegisterShop.Email" class="control-label"></label>
-                <input asp-for="RegisterShop.Email" class="form-control" aria-required="true"/>
-                <span asp-validation-for="RegisterShop.Email" class="text-danger"></span>
-            </div>
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                        <div class="form-group mb-3">
+                            <span class="text-danger">*</span>
+                            <label asp-for="RegisterShop.ShopName" class="control-label"></label>
+                            <input asp-for="RegisterShop.ShopName" class="form-control" placeholder="Enter shop name" />
+                            <span asp-validation-for="RegisterShop.ShopName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <span class="text-danger">*</span>
+                            <label asp-for="RegisterShop.Description" class="control-label"></label>
+                            <textarea asp-for="RegisterShop.Description" class="form-control" rows="3" placeholder="Tell us about your shop"></textarea>
+                            <span asp-validation-for="RegisterShop.Description" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <span class="text-danger">*</span>
+                            <label asp-for="RegisterShop.PickupAddress" class="control-label"></label>
+                            <input asp-for="RegisterShop.PickupAddress" class="form-control" placeholder="Full street address" />
+                            <span asp-validation-for="RegisterShop.PickupAddress" class="text-danger"></span>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="form-group col-md-6">
+                                <span class="text-danger">*</span>
+                                <label asp-for="RegisterShop.ContactNumber" class="control-label"></label>
+                                <input asp-for="RegisterShop.ContactNumber" class="form-control" placeholder="09XXXXXXXXX" />
+                                <span asp-validation-for="RegisterShop.ContactNumber" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <span class="text-danger">*</span>
+                                <label asp-for="RegisterShop.Email" class="control-label"></label>
+                                <input asp-for="RegisterShop.Email" class="form-control" placeholder="shop@email.com" />
+                                <span asp-validation-for="RegisterShop.Email" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <input type="submit" value="Register Shop" class="btn btn-primary btn-lg" />
+                            <a asp-page="Index" class="btn btn-link text-center">Back to List</a>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

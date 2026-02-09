@@ -5,48 +5,65 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm border-danger">
+                <div class="card-body p-4">
+                    <h2 class="text-danger mb-1">Delete</h2>
+                    <h4 class="text-muted mb-3">Are you sure you want to delete this shop?</h4>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>RegisterShop</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RegisterShop.ShopName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RegisterShop.ShopName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RegisterShop.Description)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RegisterShop.Description)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RegisterShop.PickupAddress)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RegisterShop.PickupAddress)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RegisterShop.ContactNumber)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RegisterShop.ContactNumber)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RegisterShop.Email)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RegisterShop.Email)
-        </dd>
-    </dl>
-    
-    <form method="post">
-        <input type="hidden" asp-for="RegisterShop.ShopID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
-    </form>
+                    <div class="alert alert-warning">
+                        <strong>Warning!</strong> Deleting <b>@Model.RegisterShop.ShopName</b> will remove all associated shop data and listings permanently.
+                    </div>
+
+                    <hr class="mb-4" />
+
+                    <dl class="row">
+                        <dt class="col-sm-4 text-muted">
+                            @Html.DisplayNameFor(model => model.RegisterShop.ShopName)
+                        </dt>
+                        <dd class="col-sm-8 fw-bold">
+                            @Html.DisplayFor(model => model.RegisterShop.ShopName)
+                        </dd>
+
+                        <dt class="col-sm-4 text-muted">
+                            @Html.DisplayNameFor(model => model.RegisterShop.ContactNumber)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.RegisterShop.ContactNumber)
+                        </dd>
+
+                        <dt class="col-sm-4 text-muted">
+                            @Html.DisplayNameFor(model => model.RegisterShop.Email)
+                        </dt>
+                        <dd class="col-sm-8 text-primary">
+                            @Html.DisplayFor(model => model.RegisterShop.Email)
+                        </dd>
+
+                        <dt class="col-sm-4 text-muted">
+                            @Html.DisplayNameFor(model => model.RegisterShop.PickupAddress)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.RegisterShop.PickupAddress)
+                        </dd>
+                    </dl>
+
+                    <div class="mt-4 pt-3 border-top">
+                        <form method="post">
+                            <input type="hidden" asp-for="RegisterShop.ShopID" />
+                            <div class="d-flex gap-2">
+                                <button type="submit" class="btn btn-danger px-4">
+                                    Confirm Delete
+                                </button>
+                                <a asp-page="./Index" class="btn btn-outline-secondary">
+                                    Cancel
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
