@@ -34,6 +34,7 @@
 
                         <div class="row mb-3">
                             <div class="form-group col-md-3">
+                                <span class="text-danger">*</span>
                                 <label asp-for="Register.Age" class="control-label"></label>
                                 <input asp-for="Register.Age" type="number" min="0" max="120" class="form-control" placeholder="0" />
                                 <span asp-validation-for="Register.Age" class="text-danger"></span>
@@ -78,3 +79,9 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
